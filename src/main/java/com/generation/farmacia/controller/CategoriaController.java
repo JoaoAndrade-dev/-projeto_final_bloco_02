@@ -44,11 +44,11 @@ public ResponseEntity<Categoria> getById(@PathVariable Long id){
         .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 }
 
-@GetMapping("/descricao/{descricao}")
+@GetMapping("/nomeProduto/{nomeCategoria}")
 public ResponseEntity<List<Categoria>> getByTitle(@PathVariable 
-String descricao){
+String nomeCategoria){
     return ResponseEntity.ok(categoriaRepository
-        .findAllBynomeCategoriaContainingIgnoreCase(descricao));
+        .findAllBynomeCategoriaContainingIgnoreCase(nomeCategoria));
 }
 
 @PostMapping
